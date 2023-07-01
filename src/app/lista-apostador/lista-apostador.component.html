@@ -1,0 +1,29 @@
+<h2>Lista apostadores</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Direccion</th>
+            <th>Saldo</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let apostador of apostadores">
+            <td>{{apostador.dni}}</td>
+            <td>{{apostador.nombre}}</td>
+            <td>{{apostador.telefono}}</td>
+            <td>{{apostador.correo}}</td>
+            <td>{{apostador.direccion}}</td>
+            <td>{{apostador.saldo}}</td>
+            <td>
+                <button (click)="abrirEditarApostador(apostador.dni)" class="btn btn-info">Editar</button>
+                <button (click)="eliminarApostador(apostador.dni)" class="btn btn-danger"style="margin-left : 10px">Eliminar</button>
+                <button (click)="verDetallesApostador(apostador.dni)" class="btn btn-primary"style="margin-left : 10px">Detalles</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

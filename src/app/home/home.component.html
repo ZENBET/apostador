@@ -1,0 +1,41 @@
+<h1>Bienvenido a Zenbet<h1>
+<app-detalles-apostador></app-detalles-apostador>
+<!--<button mat-raised-button color="primary" (click)="incrementarSaldo()">Realizar Abono</button>-->
+<div class="container">
+    <div>
+        <button mat-raised-button color="primary" (click)="toggleForm()">Abonar cuenta</button>
+    </div>
+    
+    
+    <div class="row">
+            <div *ngIf="showForm">
+                <form (ngSubmit)="incrementarSaldo()">
+                    <div>
+                        <label>Número de la tarjeta</label>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Nro° tarjeta" minlength="16" maxlength="16" required>
+                    </div>
+
+                    <div>
+                        <label>CVV</label>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="cvv" minlength="3" maxlength="4" required>
+                    </div>
+                    
+                    <div>
+                        <label>Cantidad a abonar S/.</label>
+                    </div>
+                    
+                    <input  type="number" [(ngModel)]="cantidad" name="cantidad" required>
+                    <button color="primary" (click)="recargarPagina()" type="submit">Pagar</button>
+                </form>
+            </div>
+        
+    </div>
+</div>
+
+
+
+

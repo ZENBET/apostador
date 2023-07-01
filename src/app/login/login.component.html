@@ -1,0 +1,42 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt-20">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <div >
+                        <img src="../../../assets/acceso.png" width="100" height="100" alt="">
+                    </div>
+
+                    <h1 class="text" style="margin-bottom: 20px;">Inicio de sesión</h1>
+                    <form (ngSubmit)="login()" #loginForm="ngForm">
+
+                        <div>
+                            <label>DNI asociado a cuenta</label>
+                        </div>
+                        
+                        <input type="number" id="dni" name="dni" [(ngModel)]="dni" placeholder="Digite su DNI" required>
+
+                        <div>
+                            <label style="padding-top: 10px;">Contraseña</label>
+                        </div>
+                        
+                        <input type="password" id="contrasena" name="contrasena" [(ngModel)]="contrasena"
+                            placeholder="Digite su Contraseña" required>
+
+                        <br>
+                        <br>
+                        <p id="msjError">Error</p>
+                        <br>
+                        <br>
+
+                        <div class="container text-center">
+                            <button color="primary">Iniciar sesion</button>
+                            <button type="reset" style="margin-left: 20px;" 
+                                color="accent">Limpiar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Edición de cuenta apostador</h3>
+    <form (ngSubmit)= "onSubmit()" #empleadoForm = "ngForm">
+
+        <div class="form-group">
+            <label>DNI : </label>
+            <input type = "text"  disabled
+            class="form-control"
+            id = "DNI"
+            [(ngModel)] = "apostador.dni"
+            name = "DNI"
+            required
+            minlength="8"
+            maxlength="8"
+            placeholder="Digite su dni "
+            #nombre = "ngModel"
+            >
+        </div>
+      
+        <div class="form-group">
+        <label>Nombre : </label>
+        <input type = "text"
+        class="form-control"
+        id = "nombre"
+        [(ngModel)] = "apostador.nombre"
+        name = "nombre"
+        required
+        minlength="3"
+        maxlength="30"
+        placeholder="Digite su nombre "
+        #nombre = "ngModel"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Telefono : </label>
+        <input type = "text"
+        class="form-control"
+        id = "telefono"
+        [(ngModel)] = "apostador.telefono"
+        name = "telefono"
+        required
+        minlength="9"
+        maxlength="9"
+        placeholder="Digite su telefono "
+        #nombre = "ngModel"
+        >
+      </div>
+      
+      <div class="form-group">
+        <label>Correo : </label>
+        <input type = "correo"
+        class="form-control"
+        id = "correo"
+        [(ngModel)] = "apostador.correo"
+        name = "correo"
+        pattern ="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+        required
+        placeholder="Digite su correo "
+        #email = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "email.invalid"><p>Debe tener el formato de un correo</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Direccion : </label>
+        <input type = "text"
+        class="form-control"
+        id = "direccion"
+        [(ngModel)] = "apostador.direccion"
+        name = "direccion"
+        required
+        minlength="3"
+        maxlength="30"
+        placeholder="Digite su direccion "
+        #nombre = "ngModel"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña : </label>
+        <input type = "password"
+        class="form-control"
+        id = "contrasena"
+        [(ngModel)] = "apostador.contrasena"
+        name = "contrasena"
+        required
+        minlength="5"
+        maxlength="15"
+        placeholder="Digite su contrasena "
+        #nombre = "ngModel"
+        >
+      </div>
+
+      
+      
+  
+      <button class="btn btn-success" [disabled]= "!empleadoForm.form.valid">Guardar</button>
+    </form>
+  </div>
